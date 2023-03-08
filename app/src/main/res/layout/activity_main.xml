@@ -8,11 +8,18 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linear_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:background="@color/purple"
+        android:padding="8dp"
+        android:paddingStart="8dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="16dp">
 
         <ImageView
+            app:tint="@color/white"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
@@ -33,27 +40,46 @@
     </LinearLayout>
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_menu"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/cabin"
+        android:text="@string/salutation"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <TextView
         android:id="@+id/text_phrase"
-        android:padding="16dp"
-        android:gravity="center"
-        android:layout_centerInParent="true"
-        android:text="Motivation Motivation Motivation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/cabin"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="@string/app_name"
+        android:textColor="@color/black"
+        android:textSize="22sp" />
 
     <View
-        android:background="@color/black"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/text_phrase"
         android:layout_width="128dp"
-        android:layout_height="5dp"/>
-    
-    <Button
-        android:layout_marginBottom="16dp"
+        android:layout_height="3dp"
+        android:layout_below="@id/text_phrase"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:text="Botão"
+        android:background="@color/black"
+        android:backgroundTint="@color/dark_purple"
+        android:elevation="5dp" />
+
+    <Button
+        android:id="@+id/button_new_phrase"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/dark_purple"
+        android:fontFamily="@font/cabin"
+        android:text="@string/new_phrase" />
 
 </RelativeLayout>
