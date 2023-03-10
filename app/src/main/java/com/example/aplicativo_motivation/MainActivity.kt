@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         // esconde a barra roxa de navegação
         supportActionBar?.hide()
 
+        handleUserName()
+
         // evento de clique
         binding.buttonNewPhrase.setOnClickListener(this)
     }
@@ -26,5 +28,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if (view.id == R.id.button_new_phrase) {
             var s = ""
         }
+    }
+
+    private fun handleUserName() {
+        val name = SecurityPreferences(this).getString("USER_NAME")
+        binding.textUserName.text = "Olá, $name!"
     }
 }
