@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.example.aplicativo_motivation.databinding.ActivityMainBinding
+import java.util.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -41,10 +42,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             handleFilter(view.id)
         }
     }
+
+    //atualiza a frase de motivação e passa a linguagem
     private fun handleNextPhrase() {
-        binding.textPhrase.text = Mock().getPhrase(categoryId)
+        binding.textPhrase.text = Mock().getPhrase(categoryId, Locale.getDefault().language)
     }
 
+    //trata o filtro aplicado para as frases
     private fun handleFilter(id: Int) {
         binding.imageAll.setColorFilter(ContextCompat.getColor(this, R.color.dark_purple))
         binding.imageEmojiHappy.setColorFilter(ContextCompat.getColor(this, R.color.dark_purple))
